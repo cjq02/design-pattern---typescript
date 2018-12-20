@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug chain of responsibility",
+            "preLaunchTask": "build-ts",
+            "program": "${workspaceFolder}/src/startup/behavior/ApplicationChainOfResponsibility.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug proxy",
+            "preLaunchTask": "build-ts",
+            "program": "${workspaceFolder}/src/startup/structure/ApplicationProxy.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
+        }
+    ]
+}

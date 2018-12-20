@@ -1,0 +1,10 @@
+{
+    "_moduleAliases": {
+        "@patterns": "./build/patterns"
+    },
+    "dependencies": {
+        "@types/module-alias": "^2.0.0",
+        "@types/node": "^10.12.17",
+        "module-alias": "^2.1.0"
+    }
+}
