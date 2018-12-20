@@ -7,8 +7,8 @@ class RequestorClient {
  
     public static getHandlerChain(): AbstractSupportHandler {
         let technicalSupportHandler: AbstractSupportHandler = new TechnicalSupportHandler(AbstractSupportHandler.TECHNICAL);
-        let billingSupportHandler: AbstractSupportHandler = new BillingSupportHandler(AbstractSupportHandler.TECHNICAL);
-        let generalSupportHandler: AbstractSupportHandler = new GeneralSupportHandler(AbstractSupportHandler.TECHNICAL);
+        let billingSupportHandler: AbstractSupportHandler = new BillingSupportHandler(AbstractSupportHandler.BILLING);
+        let generalSupportHandler: AbstractSupportHandler = new GeneralSupportHandler(AbstractSupportHandler.GENERAL);
 
         technicalSupportHandler.setNextHandler(billingSupportHandler);
         billingSupportHandler.setNextHandler(generalSupportHandler);

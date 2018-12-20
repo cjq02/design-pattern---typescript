@@ -18,7 +18,11 @@ abstract class AbstractSupportHandler {
 
     public receiveRequest(level: number, message: string) {
         if (this.level <= level) {
-            
+            this.handleRequest(message);
+        }
+
+        if(this.nextHandler !=null){
+            this.nextHandler.receiveRequest(level, message);
         }
     }
 
