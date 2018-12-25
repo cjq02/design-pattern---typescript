@@ -1,4 +1,4 @@
-import ICommand from "../base/ICommand";
+import ICommand from "../base command/ICommand";
 import BaseToy from "../receiver/BaseToy";
 
 class StartCommand implements ICommand {

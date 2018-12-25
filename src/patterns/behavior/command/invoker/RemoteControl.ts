@@ -1,4 +1,4 @@
-import ICommand from "../base/ICommand";
+import ICommand from "../base command/ICommand";
 
 class RemoteControl {
     private onCommand!: ICommand;

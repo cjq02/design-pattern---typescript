@@ -2,7 +2,7 @@ require('module-alias/register')
 
 import RemoteControl from "@patterns/behavior/command/invoker/RemoteControl";
 import Car from "@patterns/behavior/command/receiver/car";
-import ICommand from "@patterns/behavior/command/base/ICommand";
+import ICommand from "@patterns/behavior/command/base command/ICommand";
 import StartCommand from "@patterns/behavior/command/concrete command/StartCommand";
 import RotatingTop from "@patterns/behavior/command/receiver/RotatingTop";
 import StopCommand from "@patterns/behavior/command/concrete command/StopCommand";
