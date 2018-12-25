@@ -29,6 +29,19 @@
             "outFiles": [
                 "${workspaceFolder}/build/**/*.js"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug command",
+            "preLaunchTask": "build-ts",
+            "program": "${workspaceFolder}/src/startup/behavior/ApplicationCommand.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
         }
     ]
 }
