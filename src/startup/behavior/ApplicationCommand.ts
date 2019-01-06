@@ -1,4 +1,4 @@
-require('module-alias/register')
+require('module-alias/register');
 
 import RemoteControl from "@patterns/behavior/command/invoker/RemoteControl";
 import Car from "@patterns/behavior/command/receiver/car";
