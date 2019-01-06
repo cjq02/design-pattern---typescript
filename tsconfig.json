@@ -7,8 +7,8 @@
     "outDir": "./build",
     "sourceMap": true,
     "strict": true,
+    "strictNullChecks": false,
     "noImplicitAny": true,
-    "strictNullChecks": true,
     // "rootDir": "src",
     "baseUrl": ".",
     "paths": {
