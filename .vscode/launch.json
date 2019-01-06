@@ -42,6 +42,19 @@
             "outFiles": [
                 "${workspaceFolder}/build/**/*.js"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug interpreter",
+            "preLaunchTask": "build-ts",
+            "program": "${workspaceFolder}/src/startup/behavior/ApplicationInterpreter.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
         }
     ]
 }
