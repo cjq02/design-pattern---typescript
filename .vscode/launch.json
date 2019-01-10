@@ -55,6 +55,19 @@
             "outFiles": [
                 "${workspaceFolder}/build/**/*.js"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug iterator",
+            "preLaunchTask": "build-ts",
+            "program": "${workspaceFolder}/src/startup/behavior/ApplicationIterator.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ]
         }
     ]
 }
