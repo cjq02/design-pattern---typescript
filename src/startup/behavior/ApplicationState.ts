@@ -18,10 +18,10 @@ class ApplicationState {
         this.player = new Player();
 
         let chooseMsg = `You can select follow options: \r
-        ${StateEnum.LOCKED} - locked \r
-        ${StateEnum.PLAY} - play \r
-        ${StateEnum.CURRENT_STATE} - current state \r
-        ${StateEnum.EXIT} - exit \n`;
+            ${StateEnum.LOCKED} - locked \r
+            ${StateEnum.PLAY} - play \r
+            ${StateEnum.CURRENT_STATE} - current state \r
+            ${StateEnum.EXIT} - exit \n`;
 
         console.log(chooseMsg);
 
