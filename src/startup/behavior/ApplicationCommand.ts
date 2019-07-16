@@ -37,4 +37,4 @@ class ApplicationCommand {
 
 }
 
-ApplicationCommand.main(); 2
+ApplicationCommand.main(); 
