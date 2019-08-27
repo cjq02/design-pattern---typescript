@@ -1,7 +1,7 @@
 import AbstractState from "../base/AbstractState";
 import ReadyState from "./ReadyState";
 import Player from "../context/Player";
-import PlayMessageEnum from "../enum/StateEnum";
+import PlayMessageEnum from "../enum/PlayMessageEnum";
 
 class LockedState extends AbstractState {
 

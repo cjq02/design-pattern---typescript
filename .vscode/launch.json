@@ -5,7 +5,20 @@
     "version": "0.2.0",
     "configurations": [
 
-
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug factory method",
+            "preLaunchTask": "build-ts",
+            "program": "${workspaceFolder}/src/startup/creational/ApplicationFactoryMethod.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ],
+        },
         {
             "type": "node",
             "request": "launch",

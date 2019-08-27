@@ -10,6 +10,9 @@
     "strictNullChecks": false,
     "noImplicitAny": true,
     // "rootDir": "src",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "suppressImplicitAnyIndexErrors": true,
     "baseUrl": ".",
     "paths": {
       "*": [

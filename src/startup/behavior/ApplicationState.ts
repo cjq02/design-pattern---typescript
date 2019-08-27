@@ -1,13 +1,8 @@
 require('module-alias/register');
 import readline = require('readline');
 import Player from '@patterns/behavior/state/context/Player';
-
-enum StateEnum {
-    LOCKED = "1",
-    PLAY = "2",
-    CURRENT_STATE = "3",
-    EXIT = "0"
-}
+import { StateEnumRef, StateEnum } from '@patterns/behavior/state/enum/StateEnum';
+import * as _ from 'lodash';
 
 class ApplicationState {
 
@@ -17,12 +12,12 @@ class ApplicationState {
         const rl = this.initReadline();
         this.player = new Player();
 
-        let chooseMsg = `You can select follow options: \r
-            ${StateEnum.LOCKED} - locked \r
-            ${StateEnum.PLAY} - play \r
-            ${StateEnum.CURRENT_STATE} - current state \r
-            ${StateEnum.EXIT} - exit \n`;
+        let map = _.map(StateEnum, (v) => {
+            let enumerate = StateEnumRef.getBykey(v)
+            return `[${enumerate.key}] ${enumerate.name}`
+        });
 
+        let chooseMsg = `You can select follow options: ${map.join(', ')} \n`;
         console.log(chooseMsg);
 
         this.choose(rl);
