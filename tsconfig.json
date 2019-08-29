@@ -20,6 +20,9 @@
       ],
       "@patterns/*": [
         "src/patterns/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
       ]
     }
   },

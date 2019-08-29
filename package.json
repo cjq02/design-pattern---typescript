@@ -1,6 +1,7 @@
 {
     "_moduleAliases": {
-        "@patterns": "./build/patterns"
+        "@patterns": "./build/patterns",
+        "@utils": "./build/utils"
     },
     "dependencies": {
         "@types/lodash": "^4.14.137",
