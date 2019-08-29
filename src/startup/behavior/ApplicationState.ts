@@ -1,17 +1,20 @@
 require('module-alias/register');
-import readline = require('readline');
 import Player from '@patterns/behavior/state/context/Player';
 import { StateEnumRef, StateEnum } from '@patterns/behavior/state/enum/StateEnum';
 import * as _ from 'lodash';
+import ReadlineUtils from '@utils/ReadlineUtils';
 
 class ApplicationState {
 
     private static player: Player;
 
     public static main(): void {
-        const rl = this.initReadline();
         this.player = new Player();
+        this.printChooseMsg();
+        this.choose();
+    }
 
+    static printChooseMsg() {
         let map = _.map(StateEnum, (v) => {
             let enumerate = StateEnumRef.getBykey(v)
             return `[${enumerate.key}] ${enumerate.name}`
@@ -19,21 +22,10 @@ class ApplicationState {
 
         let chooseMsg = `You can select follow options: ${map.join(', ')} \n`;
         console.log(chooseMsg);
-
-        this.choose(rl);
     }
 
-    static initReadline() {
-        const rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
-        });
-
-        return rl;
-    }
-
-    static choose(rl: readline.Interface): void {
-        rl.question(`Please choose an option:`, (answer) => {
+    static choose(): void {
+        ReadlineUtils.question((answer: any) => {
             switch (answer) {
                 case StateEnum.LOCKED:
                     this.player.getState().clickLock();
@@ -46,15 +38,15 @@ class ApplicationState {
                     console.log(this.player.getState().getName());
                     break;
                 case StateEnum.EXIT: {
-                    rl.close();
-                    return;
+                    return false;
                 }
                 default:
-                    this.choose(rl);
+                    console.log('Invalid Instruction!')
+                    return true;
             }
 
-            this.choose(rl);
-        });
+            return true;
+        })
     }
 }
 
