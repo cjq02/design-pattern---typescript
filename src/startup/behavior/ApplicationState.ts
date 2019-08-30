@@ -4,15 +4,15 @@ import { StateEnumRef, StateEnum } from '@patterns/behavior/state/enum/StateEnum
 import * as _ from 'lodash';
 import ReadlineUtils from '@utils/ReadlineUtils';
 import { Autowired } from '@annotation/Autowired';
-import Application from '@annotation/Application';
+import { Application } from '@annotation/Application';
 
-@Application.startup
+@Application.Startup
 class ApplicationState {
 
     @Autowired(Player)
     private static player: any;
 
-    @Application.autostart
+    @Application.Autostart
     public static main(): void {
         this.choose();
     }
