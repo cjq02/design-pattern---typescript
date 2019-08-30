@@ -3,21 +3,24 @@ import Player from '@patterns/behavior/state/context/Player';
 import { StateEnumRef, StateEnum } from '@patterns/behavior/state/enum/StateEnum';
 import * as _ from 'lodash';
 import ReadlineUtils from '@utils/ReadlineUtils';
+import { Autowired } from '@annotation/Autowired';
+import Application from '@annotation/Application';
 
+@Application.startup
 class ApplicationState {
 
-    private static player: Player;
+    @Autowired(Player)
+    private static player: any;
 
+    @Application.autostart
     public static main(): void {
-        this.player = new Player();
-        this.printChooseMsg();
         this.choose();
     }
 
-    static printChooseMsg() {
-        let map = _.map(StateEnum, (v) => {
-            let enumerate = StateEnumRef.getBykey(v)
-            return `[${enumerate.key}] ${enumerate.name}`
+    static printChooseMsg(enumType: any, enumRef: any) {
+        let map = _.map(enumType, (v) => {
+            let enumerate = enumRef.getBykey(v);
+            return `[${enumerate.key}] ${enumerate.name}`;
         });
 
         let chooseMsg = `You can select follow options: ${map.join(', ')} \n`;
@@ -25,6 +28,8 @@ class ApplicationState {
     }
 
     static choose(): void {
+        this.printChooseMsg(StateEnum, StateEnumRef);
+
         ReadlineUtils.question((answer: any) => {
             switch (answer) {
                 case StateEnum.LOCKED:
@@ -49,5 +54,3 @@ class ApplicationState {
         })
     }
 }
-
-ApplicationState.main();

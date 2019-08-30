@@ -88,7 +88,7 @@
             "type": "node",
             "request": "launch",
             "name": "debug state",
-            "preLaunchTask": "build-ts",
+            "preLaunchTask": "compile-ts",
             "program": "${workspaceFolder}/src/startup/behavior/ApplicationState.ts",
             "cwd": "${workspaceFolder}",
             "protocol": "inspector",

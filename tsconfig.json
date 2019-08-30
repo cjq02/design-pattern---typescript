@@ -23,6 +23,9 @@
       ],
       "@utils/*": [
         "src/utils/*"
+      ],
+      "@annotation/*": [
+        "src/annotation/*"
       ]
     }
   },

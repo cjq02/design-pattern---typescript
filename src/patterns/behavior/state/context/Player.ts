@@ -1,6 +1,8 @@
 import AbstractState from "../base/AbstractState";
 import ReadyState from "../concrete/ReadyState";
+import { Injectable } from "@annotation/Autowired";
 
+@Injectable()
 class Player {
 
     private state: AbstractState;

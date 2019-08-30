@@ -10,6 +10,14 @@
             "problemMatcher": [
                 "$tsc"
             ]
-        }
+        },
+        {
+            "label": "compile-ts",
+            "type": "shell",
+            "command": "tsc -p '${workspaceFolder}\\tsconfig.json'",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
     ]
 }
