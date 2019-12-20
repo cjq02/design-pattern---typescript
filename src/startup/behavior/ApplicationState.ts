@@ -10,7 +10,7 @@ import { Application } from '@annotation/Application';
 class ApplicationState {
 
     @Autowired(Player)
-    private static player: any;
+    private static player: Player;
 
     @Application.Autostart
     public static main(): void {
