@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 import ReadlineUtils from '@utils/ReadlineUtils';
 import { Autowired } from '@annotation/Autowired';
 import { Application } from '@annotation/Application';
+import PrintUtils from '@utils/PrintUtils';
 
 @Application.Startup
 class ApplicationState {
@@ -17,18 +18,8 @@ class ApplicationState {
         this.choose();
     }
 
-    static printChooseMsg(enumType: any, enumRef: any) {
-        let map = _.map(enumType, (v) => {
-            let enumerate = enumRef.getBykey(v);
-            return `[${enumerate.key}] ${enumerate.name}`;
-        });
-
-        let chooseMsg = `You can select follow options: ${map.join(', ')} \n`;
-        console.log(chooseMsg);
-    }
-
     static choose(): void {
-        this.printChooseMsg(StateEnum, StateEnumRef);
+        PrintUtils.printChooseMsg(StateEnum, StateEnumRef);
 
         ReadlineUtils.question((answer: any) => {
             switch (answer) {
