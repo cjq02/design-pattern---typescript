@@ -4,9 +4,15 @@ import AbstractOrder from "./base/AbstractOrder";
 import OrderTrain from "./concrete/OrderTrain";
 import OrderTaxi from "./concrete/OrderTaxi";
 import OrderHotel from "./concrete/OrderHotel";
+import { Injectable } from "@annotation/Autowired";
+import OrderException from "./concrete/OrderException";
 
+@Injectable()
 export default class OrderFactory {
-    public getOrder(orderType: number): AbstractOrder {
+
+    constructor() { }
+
+    public getOrder(orderType: string): AbstractOrder {
         switch (orderType) {
             case OrderEnum.AIRPLANE:
                 return new OrderAirplane();
@@ -17,6 +23,7 @@ export default class OrderFactory {
             case OrderEnum.HOTEL:
                 return new OrderHotel();
             default:
+                return new OrderException();
         }
     }
 }
