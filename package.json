@@ -1,8 +1,10 @@
 {
     "_moduleAliases": {
+        "@common": "./build/common",
         "@patterns": "./build/patterns",
         "@utils": "./build/utils",
-        "@annotation": "./build/annotation"
+        "@annotation": "./build/annotation",
+        "@process": "./build/process"
     },
     "dependencies": {
         "@types/lodash": "^4.14.137",

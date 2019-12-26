@@ -26,6 +26,12 @@
       ],
       "@annotation/*": [
         "src/annotation/*"
+      ],
+      "@process/*": [
+        "src/process/*"
+      ],
+      "@common/*": [
+        "src/common/*"
       ]
     }
   },
